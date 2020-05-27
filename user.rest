@@ -1,0 +1,36 @@
+@url = http://localhost:8000
+
+GET {{url}}/users
+
+### 
+GET {{url}}/user/5ece502400ad246f0060ecd2
+
+###
+POST {{url}}/users
+Content-Type: application/json
+
+{
+    "name": "roshan acharya",
+    "email": "roshan@gmail.com",
+    "password": "123456"
+}
+
+###
+
+PUT {{url}}/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1ZWNlNTAyNDAwYWQyNDZmMDA2MGVjZDIiLCJleHAiOjE1OTA1ODgzNjkyMjV9.3h_wTzTRYnjQ8AgxNESXPpeXHxAFcAVTAyEbZ5K7onQ
+
+{
+    "name": "acharya ji"
+}
+
+### 
+
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "email": "acharya@gmail.com",
+    "password": "123456"
+}
