@@ -1,0 +1,31 @@
+@url = http://localhost:8000
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1ZWNlNTAyNDAwYWQyNDZmMDA2MGVjZDIiLCJleHAiOjE1OTA1OTI2MzgzNDl9.0b5T_zg8wkdB7hVJRtNn7joeFNjo_yx3uAFLvsIBm1k
+
+GET {{url}}/posts
+
+###
+GET {{url}}/post/5ece84060066668000e77944
+
+###
+POST {{url}}/posts
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "A new post",
+    "body": "a new body"
+}
+
+###
+PUT {{url}}/post/5ece84060066668000e77944
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "updated title"
+}
+
+
+### 
+DELETE {{url}}/post/5ece84060066668000e77944
+Authorization: {{token}}

@@ -7,14 +7,14 @@ const auth = async (ctx: RouterContext, next: any) => {
     const authToken: string = headers.get("authorization");
     if (!authToken) {
       ctx.response.status = 403;
-      ctx.response.body = { sucess: false, error: "You are not authorized" };
+      ctx.response.body = { success: false, error: "You are not authorized" };
     }
 
     const dep = await verifyToken(authToken.replace("Bearer ", ""));
 
     if (!dep) {
       ctx.response.status = 403;
-      ctx.response.body = { sucess: false, error: "You are not authorized" };
+      ctx.response.body = { success: false, error: "You are not authorized" };
       return;
     }
 
@@ -22,7 +22,7 @@ const auth = async (ctx: RouterContext, next: any) => {
     await next();
   } catch (e) {
     ctx.response.status = 403;
-    ctx.response.body = { sucess: false, error: "You are not authorized" };
+    ctx.response.body = { success: false, error: "You are not authorized" };
     return;
   }
 };

@@ -33,6 +33,10 @@ class Model {
 
     return false;
   }
+
+  async delete(id: string) {
+    await this.collection.deleteOne({ _id: ObjectId(id) });
+  }
 }
 
 export default Model;

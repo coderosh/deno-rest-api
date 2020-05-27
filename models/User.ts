@@ -1,4 +1,3 @@
-import db from "../config/db.ts";
 import Model from "./Model.ts";
 
 class User {
